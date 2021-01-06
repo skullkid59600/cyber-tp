@@ -1,0 +1,14 @@
+version: '2'
+services:
+  # Creation d'un conteneur pour l'app java
+  app-java:
+    build: .
+    networks:
+      - web
+    ports:
+      - 80:8080
+
+networks:
+  # Specifie que le network web est accessible depuis l'exterieur
+  web:
+    external: true
